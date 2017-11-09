@@ -5,17 +5,33 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wikipedia Viewer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-3 hello">
-            <p>Welcome to Wikipedia Viewer, please enter the serch term and hit enter.</p>
+   <div class="welcomeText">
+       <div class="row">
+           <div class="col-md-6 col-md-offset-3">
+               <p></p>
+           </div>
+       </div>
+   </div>
+    <div class="entry">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="text" class="search-box">
+                <i class="glyphicon glyphicon-search"></i>
+            </div>
         </div>
     </div>
 </div>
+
+<script src="scripts/jquery-3.2.1.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/scripts.js"></script>
+<script src="scripts/service.js"></script>
+<script src="scripts/app.js"></script>
 </body>
 </html>
