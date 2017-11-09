@@ -35,26 +35,38 @@ body, html {
 
 .search-box{
     border: none;
-    border-bottom: 1.2px solid white;background: transparent;
+    border-bottom: 0.5px solid white;
+    background: transparent;
+    width: 100%;
 }
 
-.entry i{
+.entry span{
     border: none;
     background: transparent;
     outline: none;
+    font-size: 1.9rem;
+    transition: 0.31s;
+    margin-left: 5px;
+    color: #ff8324;
+    margin-top: 12px;
 }
 
-.entry i:hover{
+.entry span:hover{
     cursor: pointer;
+    font-size: 2.5rem;
+    color: #ffb600;
 }
 
 .entry input:focus{
     outline:none;
-    padding-left: 4px;
+    padding-left: 4px
 }
 
 @media  (max-width:760px) {
-    .hello{
-        margin-top: 40%;
+    .welcomeText{
+        font-size: 1.4rem;
+    }
+
+    .entry span{
     }
 }

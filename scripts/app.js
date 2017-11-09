@@ -10,6 +10,4 @@ $(document).ready(function(){
         if($(".welcomeText").css("display") == "none") return;
         hideWellcomeText(showSearchBox);
     },4500);
-
-
 });
