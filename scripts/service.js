@@ -1,4 +1,5 @@
 var wikiService = function (searchTerm, callback) {
+    $(".pending").show();
   var url =
       "https://" + lang + ".wikipedia.org" + "/w/api.php?action=query&format=json&origin=*&prop=extracts%7Cpageimages&piprop=original&indexpageids=1&generator=search&exsentences=3&exintro=1&explaintext=1&gsrlimit=10&gsrsearch=" + searchTerm;
 
@@ -7,8 +8,8 @@ var wikiService = function (searchTerm, callback) {
         dataType: "json",
         url: url,
         success: function (data) {
-           console.log(data)
-          callback(data)
+          callback(data);
+            $(".pending").hide();
         },
         error: function () {
             console.log("Error")

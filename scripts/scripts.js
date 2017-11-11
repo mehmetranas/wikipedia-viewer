@@ -23,6 +23,8 @@ var showWelcomeText = function (text) {
 
 var showSearchBox = function () {
     $(".entry").show().animateCss("fadeInUp");
+    $("input.search-box").focus();
+    showToggle();
 };
 
 var hideWellcomeText = function(callback) {
@@ -47,7 +49,17 @@ var searchFire = function () {
         });
         return;
     }
+
+    $(".entry").css("margin","10% auto");
     search(term);
 };
 
+var showToggle = function () {
+    var checked = lang == "en" ? true : false;
+    $("#toggle-lang").attr("checked",checked);
+    $("#toggle-lang").bootstrapToggle({
+      on:"EN",
+      off:"TR"
+  });
+};
 

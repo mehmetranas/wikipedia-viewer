@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 </head>
 <body>
+<input type="checkbox" id="toggle-lang"
+       data-onstyle="warning"
+       data-offstyle="danger"
+       data-size="mini">
 <div class="container">
    <div class="welcomeText">
        <div class="row">
@@ -27,15 +32,14 @@
             <div class="col-md-6 col-md-offset-3 col-xs-9 col-xs-offset-1">
                 <input type="text" class="search-box">
             </div>
-            <span class="glyphicon glyphicon-search js-search"></span>
+            <span class="glyphicon glyphicon-search search-icon js-search"></span>
         </div>
         <div class="row">
             <div class="col-md-10 col-xs-9 col-xs-offset-1" id="content">
-
+                <div class="pending">
+                    <i class="fa fa-spin fa-spinner"></i>&nbsp; Loading...</div>
             </div>
-
         </div>
-
     </div>
 </div>
 
@@ -45,6 +49,8 @@
 <script src="scripts/service.js"></script>
 <script src="scripts/underscore-min.js"></script>
 <script src="scripts/bootbox.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://use.fontawesome.com/ef9139bfaa.js"></script>
 <script src="scripts/app.js"></script>
 <script type="text/x-template" id="content-template">
     <%_.each(data.query.pageids, function(id){ %>
@@ -59,7 +65,7 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">Middle aligned media</h4>
+            <h4 class="media-heading"><%=data.query.pages[id].title%></h4>
             <p><%=text%></p>
         </div>
     </div>

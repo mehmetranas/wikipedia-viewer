@@ -31,6 +31,7 @@ body, html {
     font-size: 2.5rem;
     display: none;
     animation-duration: 1.5s;
+    transition: 1s;
 }
 
 .search-box{
@@ -40,7 +41,7 @@ body, html {
     width: 100%;
 }
 
-.entry span{
+.entry span.search-icon{
     border: none;
     background: transparent;
     outline: none;
@@ -51,7 +52,7 @@ body, html {
     margin-top: 12px;
 }
 
-.entry span:hover{
+.entry span.search-icon:hover{
     cursor: pointer;
     font-size: 2.5rem;
     color: #ffb600;
@@ -63,22 +64,34 @@ body, html {
 }
 
 #content{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #content p{
     font-size: 1.6rem;
+    color: darkgray;
 }
 
 #content .media{
     margin-top: 10px;
-    background-color: brown;
+    background-color: rgba(255,65,45,0.2);
     padding: 10px;
     border-radius: 12px;
 }
 
+.pending{
+    width:100%;
+    margin: auto;
+    display: none;
+}
+
 #img-wiki{
     width: 150px;
+}
+
+#toggle-lang{
+    display: none;
+    alignment: left;
 }
 
 @media  (max-width:760px) {

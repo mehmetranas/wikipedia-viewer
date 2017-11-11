@@ -8,12 +8,15 @@ $(document).ready(function(){
         hideWellcomeText(showSearchBox);
     });
 
-
     $(".js-search").click(searchFire);
-    $(".search-box").focus(function () {
-        $(document).on("keypress",function () {
-            if(event.which == 13)
+
+    $(document).on("keypress",function () {
+        if(event.which == 13 && $("input.search-box").is(":focus"))
             searchFire();
-        })
+    });
+
+    $("#toggle-lang").change(function () {
+        lang = lang == "tr" ? "en" : "tr";
+            searchFire();
     })
 });
