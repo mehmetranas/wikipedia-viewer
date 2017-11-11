@@ -1,3 +1,5 @@
+
+
 body, html {
     height: 100%;
     width: 100%;
@@ -72,6 +74,10 @@ body, html {
     color: darkgray;
 }
 
+#content a:hover{
+    text-decoration: none;
+}
+
 #content .media{
     margin-top: 10px;
     background-color: rgba(255,65,45,0.2);
@@ -92,6 +98,13 @@ body, html {
 #toggle-lang{
     display: none;
     alignment: left;
+}
+
+.not-found{
+    color: #a94442;
+    font-size: 1.9rem;
+    width: 80%;
+    margin: auto;
 }
 
 @media  (max-width:760px) {

@@ -7,8 +7,8 @@
     <title>Wikipedia Viewer</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <input type="checkbox" id="toggle-lang"
@@ -53,24 +53,30 @@
 <script src="https://use.fontawesome.com/ef9139bfaa.js"></script>
 <script src="scripts/app.js"></script>
 <script type="text/x-template" id="content-template">
-    <%_.each(data.query.pageids, function(id){ %>
+    <% if(!data.query){%>
+    <div class="not-found">
+        <strong>Opps!</strong> There is not any result about your search term. You can try again.
+    </div>
+    <%}else{
+    _.each(data.query.pageids, function(id){ %>
     <%var imageUrl=data.query.pages[id].original?data.query.pages[id].original.source:"images/wiki.png",
-          text = data.query.pages[id].extract;
+          text = data.query.pages[id].extract,
+          fullurl = data.query.pages[id].fullurl
     %>
 
+    <a href="<%=fullurl%>" target="_blank">
     <div class="media">
         <div class="media-left">
-            <a href="#">
                 <img class="media-object img-rounded" src="<%=imageUrl%>" id="img-wiki">
-            </a>
         </div>
         <div class="media-body">
             <h4 class="media-heading"><%=data.query.pages[id].title%></h4>
             <p><%=text%></p>
         </div>
     </div>
+    </a>
 
-   <%});%>
+   <%});}%>
 
 </script>
 </body>
