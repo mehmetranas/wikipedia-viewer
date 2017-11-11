@@ -18,5 +18,9 @@ $(document).ready(function(){
     $("#toggle-lang").change(function () {
         lang = lang == "tr" ? "en" : "tr";
             searchFire();
+    });
+
+    $(".search-box").on("keyup",function () {
+        getTitles()
     })
 });

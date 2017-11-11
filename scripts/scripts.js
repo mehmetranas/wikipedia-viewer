@@ -37,7 +37,8 @@ var search = function (term) {
         var result =_.template(content)({data:data});
         $("#content").html(result);
     };
-    wikiService(term,listResult)
+    $(".pending").show();
+    wikiService(term,listResult).extractSearch();
 };
 
 var searchFire = function () {
@@ -61,5 +62,14 @@ var showToggle = function () {
       on:"EN",
       off:"TR"
   });
+};
+
+var getTitles = function () {
+    var term = $("input.search-box").val();
+    if(term.trim(" ").length<2) return;
+    var func = function (data) {
+        console.log(data);
+    };
+    wikiService(term,func).titleSearch();
 };
 
