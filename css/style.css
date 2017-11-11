@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     width: 100%;
     background-color: #122b40;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .welcomeText{
@@ -60,6 +60,25 @@ body, html {
 .entry input:focus{
     outline:none;
     padding-left: 4px
+}
+
+#content{
+    margin-top: 100px;
+}
+
+#content p{
+    font-size: 1.6rem;
+}
+
+#content .media{
+    margin-top: 10px;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#img-wiki{
+    width: 150px;
 }
 
 @media  (max-width:760px) {

@@ -1,13 +1,19 @@
+var lang = "en";
 
 $(document).ready(function(){
-    showWelcomeText("Welcome to Wikipedia Viewer, please enter the search term and hit enter.");
+    showWelcomeText("Welcome to Wikipedia Viewer, please select language.");
 
-    $(document).on("click keypress", function () {
+    $(".js-btn-lang").on("click", function () {
+        lang = $(this).attr("data-lang");
         hideWellcomeText(showSearchBox);
     });
 
-    setTimeout(function () {
-        if($(".welcomeText").css("display") == "none") return;
-        hideWellcomeText(showSearchBox);
-    },4500);
+
+    $(".js-search").click(searchFire);
+    $(".search-box").focus(function () {
+        $(document).on("keypress",function () {
+            if(event.which == 13)
+            searchFire();
+        })
+    })
 });
