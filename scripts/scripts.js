@@ -52,6 +52,7 @@ var searchFire = function () {
     }
 
     $(".entry").css("margin","10% auto");
+    $(".complater").hide();
     search(term);
 };
 
@@ -68,13 +69,46 @@ var getTitles = function () {
     var term = $("input.search-box").val();
     if(term.trim(" ").length<2) return;
     var func = function (data) {
-        var titles = $.map(data.query.pages, function (value, index) {
+        if(data.query){
+            var titles = $.map(data.query.pages, function (value, index) {
             return value.title;
         });
-        var content = $("#pop-template").html();
-        var result = _.template(content)({titles:titles});
-        $("#js-pop").html(result);
-        $(".complater").show();
+            var content = $("#pop-template").html();
+            var result = _.template(content)({titles:titles});
+            $("#js-pop").html(result);
+            $(".complater").show();
+            keyAction()
+        }else{
+            return;
+        }
     };
     wikiService(term,func).titleSearch();
+};
+
+var keyAction = function () {
+    var index = -1;
+    var maxIndex = $(".complater").find("p").length - 1;
+    $(document).keydown(function (e) {
+    var isActive = $(".complater").css("display");
+    if(isActive == "none") return;
+        switch (e.keyCode){
+            case 38:
+                if(index <= 0) break;
+                index--;
+
+                break;
+            case 40:
+                if(index === maxIndex) break;
+                index++;
+
+                break;
+            default:
+                return;
+        }
+
+        $(".hover").removeClass("hover");
+        $("#" + index).addClass("hover");
+        var text = $("#" + index).text();
+        $(".search-box").val(text);
+    });
 };

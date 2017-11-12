@@ -11,8 +11,10 @@ $(document).ready(function(){
     $(".js-search").click(searchFire);
 
     $(document).on("keypress",function () {
-        if(event.which == 13 && $("input.search-box").is(":focus"))
+        if(event.which == 13 && $("input.search-box").is(":focus")) {
             searchFire();
+            $(".search-box").blur();
+        }
     });
 
     $("#toggle-lang").change(function () {
@@ -20,7 +22,8 @@ $(document).ready(function(){
             searchFire();
     });
 
-    $(".search-box").on("keyup",function () {
+    $(".search-box").on("keyup",function (e) {
+        if(e.keyCode === 38 || e.keyCode === 40) return;
         getTitles()
     });
 
@@ -28,6 +31,6 @@ $(document).ready(function(){
         var term = $(this).text();
         $(".search-box").val(term);
         searchFire();
-        $(this).parent("div").hide();
     });
+
  });

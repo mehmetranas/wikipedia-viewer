@@ -85,9 +85,9 @@
 
 </script>
 <script type="text/x-template" id="pop-template">
-<%_.each(titles,function(title){
+<%_.each(titles,function(title,index){
     %>
-    <p class="complated-sentence"><%=title%></p>
+    <p class="complated-sentence" id="<%=index%>"><%=title%></p>
 <%});%>
 </script>
 </body>

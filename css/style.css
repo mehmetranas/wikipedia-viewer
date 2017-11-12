@@ -122,6 +122,10 @@ body, html {
     background-color: rgba(255,60,55,0.2);
 }
 
+.hover{
+    background-color: rgba(255,60,55,0.2);
+}
+
 
 @media  (max-width:760px) {
     .welcomeText{
