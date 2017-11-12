@@ -68,8 +68,13 @@ var getTitles = function () {
     var term = $("input.search-box").val();
     if(term.trim(" ").length<2) return;
     var func = function (data) {
-        console.log(data);
+        var titles = $.map(data.query.pages, function (value, index) {
+            return value.title;
+        });
+        var content = $("#pop-template").html();
+        var result = _.template(content)({titles:titles});
+        $("#js-pop").html(result);
+        $(".complater").show();
     };
     wikiService(term,func).titleSearch();
 };
-

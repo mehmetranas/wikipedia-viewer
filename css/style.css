@@ -107,6 +107,22 @@ body, html {
     margin: auto;
 }
 
+.complater{
+    margin-top: 20px;
+    display:none;
+}
+
+.complater p.complated-sentence{
+    font-size: 18px;
+    margin: 2px;
+}
+
+.complater p.complated-sentence:hover{
+    cursor: pointer;
+    background-color: rgba(255,60,55,0.2);
+}
+
+
 @media  (max-width:760px) {
     .welcomeText{
         font-size: 1.4rem;

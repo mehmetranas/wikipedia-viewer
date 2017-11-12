@@ -4,6 +4,13 @@ var wikiService = function (searchTerm, callback) {
         $(".pending").hide();
     };
 
+    var error = function () {
+        bootbox.alert({
+            size:"small",
+            message:"Something went wrong, please tyr again."
+        })
+    };
+
     var ajax = function (url) {
         $.ajax({
             method:"GET",
@@ -14,9 +21,6 @@ var wikiService = function (searchTerm, callback) {
         });
     };
 
-    var error = function () {
-        console.log("Error")
-    };
 
     var extracts = function () {
         var url =
@@ -26,7 +30,7 @@ var wikiService = function (searchTerm, callback) {
 
     var titles = function () {
         var url =
-            "https://" + lang + ".wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrlimit=10&gsrsearch=" + searchTerm;
+            "https://" + lang + ".wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrlimit=6&gsrsearch=" + searchTerm;
        ajax(url);
     };
 

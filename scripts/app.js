@@ -22,5 +22,12 @@ $(document).ready(function(){
 
     $(".search-box").on("keyup",function () {
         getTitles()
-    })
-});
+    });
+
+    $(".entry").on("click",".complated-sentence",function () {
+        var term = $(this).text();
+        $(".search-box").val(term);
+        searchFire();
+        $(this).parent("div").hide();
+    });
+ });
