@@ -132,6 +132,17 @@ body, html {
         font-size: 1.4rem;
     }
 
-    .entry span{
+    #img-wiki{
+        width: 100px;
+        margin: auto;
+    }
+
+    .media-left{
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #content p{
+        font-size: 1.2rem;
     }
 }
