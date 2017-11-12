@@ -13,7 +13,6 @@ $(document).ready(function(){
     $(document).on("keypress",function () {
         if(event.which == 13 && $("input.search-box").is(":focus")) {
             searchFire();
-            $(".search-box").blur();
         }
     });
 

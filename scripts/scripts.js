@@ -53,6 +53,7 @@ var searchFire = function () {
 
     $(".entry").css("margin","10% auto");
     $(".complater").hide();
+    $(".search-box").blur();
     search(term);
 };
 
