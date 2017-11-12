@@ -67,7 +67,9 @@ var showToggle = function () {
 
 var getTitles = function () {
     var term = $("input.search-box").val();
-    if(term.trim(" ").length<2) return;
+    if(term.trim(" ").length<2) {
+        $(".complater").hide();
+    };
     var func = function (data) {
         if(data.query){
             var titles = $.map(data.query.pages, function (value, index) {
